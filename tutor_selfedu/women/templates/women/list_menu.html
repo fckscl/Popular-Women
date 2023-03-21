@@ -1,0 +1,22 @@
+{% for m in menu %}
+	{% if m.title == 'Add Page'%}
+		{% if request.user.is_authenticated %}
+			<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+			{% else %}
+			<li>{{ m.title }}</li>
+		{% endif %}
+	{% else %}
+		<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+	{% endif %}	
+{% endfor %}
+		{% if request.user.is_authenticated %}
+			<li> {{request.user.username}} | <a href="{% url 'logout' %}">Logout</a></li>
+		{% else %}
+			<li> <a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Login</a></li>
+		{% endif %}
+		<li class="last">
+			<form action="{% url 'search' %}" method="get">
+				{% csrf_token %}
+				<input type="text" name="query" id="query" cols="10" rows="1" placeholder="Search"></textarea>
+			</form>
+		</li>
