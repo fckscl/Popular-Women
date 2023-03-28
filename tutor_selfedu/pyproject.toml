@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "women"
+version = "0.1.0"
+description = ""
+authors = ["fckscl <dimapugach31102003@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+asgiref = "3.6.0"
+django = "3.2.18"
+django-ranged-response = "0.2.0"
+django-simple-captcha = "0.5.17"
+django-debug-toolbar = "3.8.1"
+pillow = "9.4.0"
+sqlparse = "0.4.3"
+tzdata = "2022.7"
+dj-database-url = "^1.2.0"
+psycopg2-binary = "^2.9.5"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
