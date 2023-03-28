@@ -1,8 +1,3 @@
-databases:
-  - name: tutor_selfedu
-    databaseName: db
-    user: admin
-
 services:
   - type: web
     name: tutor_selfedu
@@ -10,10 +5,6 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn tutor_selfedu.wsgi:application"
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: db
-          property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
