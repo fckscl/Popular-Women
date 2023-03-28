@@ -1,6 +1,6 @@
 databases:
   - name: tutor_selfedu
-    databaseName: tutor_selfedu
+    databaseName: db
     user: admin
 
 services:
